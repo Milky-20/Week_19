@@ -24,36 +24,36 @@ constructor(x, y){
     }
 }
 
-let x = Number(document.getElementById('num1').value);
-let y = Number(document.getElementById('num2').value);
+let x = document.getElementById('num1');
+let y = document.getElementById('num2');
 let result = document.getElementById('result');
 
 function plus() {
-Calculator.plus(x, y);
+Calculator.plus(+x.value, +y.value);
 }
 
 function minus() {
-Calculator.minus(x, y);
+Calculator.minus(+x.value, +y.value);
     }
 
 function multiply() {
-Calculator.multiply(x, y);
+Calculator.multiply(+x.value, +y.value);
         }
 
 function divide() {
 
-if(y === '0'){
+if(+y.value === '0'){
 
 result.textContent = 'Я не знаю чему это равно, честно';
 
 } else {
 
-Calculator.divide(x, y);
+Calculator.divide(+x.value, +y.value);
 }
 
 }
 
 document.querySelector('.plus').addEventListener('click', plus);
-document.querySelector('.minus').addEventListener('click', minus);;
-document.querySelector('.multply').addEventListener('click', multiply);;
-document.querySelector('.divide').addEventListener('click', divide);;
+document.querySelector('.minus').addEventListener('click', minus);
+document.querySelector('.multply').addEventListener('click', multiply);
+document.querySelector('.divide').addEventListener('click', divide);
